@@ -1,0 +1,10 @@
+               List of relations
+ Schema |       Name        |   Type   | Owner  
+--------+-------------------+----------+--------
+ public | blogs             | table    | ubuntu
+ public | blogs_id_seq      | sequence | ubuntu
+ public | contacts          | table    | ubuntu
+ public | contacts_id_seq   | sequence | ubuntu
+ public | schema_migrations | table    | ubuntu
+(5 rows)
+
