@@ -12,7 +12,7 @@ config.secret_key = 'e263a3e8ef86080bc2a6651515c20083432611c5ae194c552e437c83bb3
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'noreply@gentle-citadel-28550.herokuapp.com/'
+  config.mailer_sender = 'noreply@gentle-citadel-28550.herokuapp.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
