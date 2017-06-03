@@ -43,8 +43,9 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
+
   gem 'better_errors'
-  
+
 end
 
 gem 'twitter-bootstrap-rails'
@@ -64,3 +65,7 @@ end
 gem 'rails_admin'
 
 gem 'cancan'
+
+gem 'activeresource'
+
+gem 'omniauth'
