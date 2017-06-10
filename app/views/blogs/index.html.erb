@@ -1,12 +1,16 @@
 <div class="container">
     <div class="wrapper col-mid-8 col-mid-offset-2 col-sm-10">
-    
+
 <p><%= notice %></p>
 
 <h1>ブログ一覧</h1>
 <%= link_to "ブログを作成する", new_blog_path, class:'btn btn-default' %>
 
 <% @blogs.each do |blog| %>
+
+<br>
+<%= profile_img(blog.user) %>
+<br>
 <p>タイトル：<%=blog.title %></p>
 <p>本文：<%=blog.content %></p>
 <p>投稿者：<%=blog.user_name %></p>
