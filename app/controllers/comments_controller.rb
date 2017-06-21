@@ -17,11 +17,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment=Comment.find(params[:id])
-    @blog = @comment.blog
+    flash[:notice] = 'コメントを削除しました。'
     respond_to do |format|
          @comment.destroy
-           format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
-           # JS形式でレスポンスを返します。
            format.js { render :index }
          end
   end
