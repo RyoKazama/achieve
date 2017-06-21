@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment=Comment.find(params[:id])
-    @blog = @comment.blog_id
+    @blog = @comment.blog
     respond_to do |format|
          @comment.destroy
            format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
