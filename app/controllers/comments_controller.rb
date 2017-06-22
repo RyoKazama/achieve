@@ -3,11 +3,11 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
-
     respond_to do |format|
          if @comment.save
            format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。 ' }
            # JS形式でレスポンスを返します。
+           flash[:notice] = 'コメントを追加しました。'
            format.js { render :index }
          else
            format.html { render :new }
