@@ -9,7 +9,9 @@ class CommentsController < ApplicationController
            flash[:notice] = 'コメントを追加しました。'
            format.js { render :index }
          else
-           format.html { render :new }
+           # format.html { render :new }
+           flash[:notice] = 'コメントを入力してください。'
+           format.js { render :index }
          end
        end
      end

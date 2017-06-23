@@ -1,15 +1,27 @@
 <ul>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @comment.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
-          <p class="right">
+           <p class="right">
             <%= link_to '', edit_blog_comment_path(blog, comment), class: "fa fa-pencil-square-o fa-lg" %>
             <%= link_to '', blog_comment_path(blog, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
           </p>
         <% end %>
+
       </li>
     <% end %>
   <% end %>
