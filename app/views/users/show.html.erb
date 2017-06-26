@@ -5,15 +5,15 @@
 
   <!--users全体を確認-->
   <% @users.each do |user| %>
-    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
 
   <!--選択されている@userがフォローしている人なら表示-->
     <% if @user.following?(user) %>
+    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
       <%= profile_img(user) %>
       <br>
       <%= user.name %>
-      <% end %>
     </div>
+    <% end %>
   <% end %>
 
 <div class="container-child col-md-12 col-sm-12 col-xs-12" >
@@ -22,14 +22,14 @@
 </div>
   <!--users全体を確認-->
   <% @users.each do |user| %>
-    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
   <!--選択されている@userをフォローしている人なら表示-->
     <% if user.following?(@user) %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
       <%= profile_img(user) %>
       <br>
       <%= user.name %>
-      <% end %>
-    </div>
+      </div>
+   <% end %>
   <% end %>
 
 
