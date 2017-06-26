@@ -1,5 +1,6 @@
 <div id="follow_form_<%= user.id %>">
 
+<% unless user == current_user %>
   <% unless current_user.following?(user)%>
     <%= form_for(current_user.relationships.build(followed_id: user.id),remote: true) do |f| %>
       <%= f.hidden_field :followed_id %>
@@ -11,6 +12,7 @@
       <%= f.submit "つながりを解除", class:"btn btn-large" %>
     <% end %>
   <% end %>
+<% end %>
   <%= link_to "ユーザー詳細", user_path(user.id), class: 'btn btn-default btn-sm btn-success' %>
 
 
