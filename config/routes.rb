@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: {
@@ -29,6 +29,10 @@ end
   root 'top#index'
 
   resources :poems, only: [:index, :show]
+
+  resources :users, only: [:index, :show]
+
+  resources :relationships, only: [:create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
